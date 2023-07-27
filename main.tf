@@ -9,3 +9,11 @@ resource "hcp_boundary_cluster" "example" {
   username   = var.username
   password   = var.password
 }
+
+resource "hcp_hvn" "example" {
+  hvn_id         = "main-hvn"
+  cloud_provider = "aws"
+  region         = var.region
+  cidr_block     = "172.25.16.0/20"
+}
+
