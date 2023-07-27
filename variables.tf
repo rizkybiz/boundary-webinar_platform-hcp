@@ -11,6 +11,11 @@ variable "region" {
   default     = "eu-west-1"
 }
 
+variable "tier" {
+  description = "Standard or Plus"
+  default     = "standard"
+}
+
 variable "username" {
   description = "Initial Username to access Boundary"
 }
