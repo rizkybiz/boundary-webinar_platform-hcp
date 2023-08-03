@@ -11,7 +11,7 @@ variable "region" {
   default     = "eu-west-1"
 }
 
-variable "tier" {
+variable "boundary_tier" {
   description = "Standard or Plus"
   default     = "standard"
 }

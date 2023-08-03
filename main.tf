@@ -5,7 +5,7 @@ provider "hcp" {
 
 resource "hcp_boundary_cluster" "example" {
   cluster_id = "js-boundary-cluster"
-  tier       = var.tier
+  tier       = var.boundary_tier
   username   = var.username
   password   = var.password
 }
