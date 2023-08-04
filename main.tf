@@ -29,5 +29,5 @@ resource "hcp_vault_cluster" "example" {
 
 resource "hcp_vault_cluster_admin_token" "example" {
   count      = anytrue([var.vault_enabled, var.hvn_enabled]) ? 1 : 0
-  cluster_id = hcp_vault_cluster.example.cluster_id
+  cluster_id = hcp_vault_cluster.example.*.cluster_id
 }
