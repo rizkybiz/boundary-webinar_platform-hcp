@@ -29,5 +29,6 @@ resource "hcp_vault_cluster" "example" {
 
 resource "hcp_vault_cluster_admin_token" "example" {
   count      = var.vault_enabled ? 1 : 0
-  cluster_id = element(hcp_vault_cluster.example.*.cluster_id, count.index)
+  cluster_id = hcp_vault_cluster.example[0].cluster_id
+  #cluster_id = element(hcp_vault_cluster.example.*.cluster_id, count.index)
 }
