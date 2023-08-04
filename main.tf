@@ -12,7 +12,7 @@ resource "hcp_boundary_cluster" "example" {
 }
 
 resource "hcp_hvn" "example" {
-  count          = var.hvn_enabled ? 1 : 0
+  count          = anytrue([var.hvn_enabled, var.vault_enabled]) ? 1 : 0
   hvn_id         = "main-hvn"
   cloud_provider = var.hvn_provider
   region         = var.region
@@ -28,6 +28,6 @@ resource "hcp_vault_cluster" "example" {
 }
 
 resource "hcp_vault_cluster_admin_token" "example" {
-  count      = anytrue([var.vault_enabled, var.hvn_enabled]) ? 1 : 0
-  cluster_id = hcp_vault_cluster.example.*.cluster_id
+  count      = var.vault_enabled ? 1 : 0
+  cluster_id = element(hcp_vault_cluster.example.*.cluster_id, count.index)
 }
