@@ -22,7 +22,7 @@ resource "hcp_hvn" "example" {
 resource "hcp_vault_cluster" "example" {
   count           = var.vault_enabled ? 1 : 0
   cluster_id      = "js-vault-cluster"
-  hvn_id          = hcp_hvn.example.*.hvn_id
+  hvn_id          = hcp_hvn.example[0].hvn_id
   public_endpoint = var.vault_public_endpoint
   tier            = var.vault_tier
 }
