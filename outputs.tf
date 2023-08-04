@@ -1,51 +1,69 @@
-output "cluster_url" {
-  value = hcp_boundary_cluster.example.cluster_url
+output "boundary_cluster_url" {
+  value = hcp_boundary_cluster.example.*.cluster_url
 }
 
-output "created_at" {
-  value = hcp_boundary_cluster.example.created_at
+output "vault_cluster_public_url" {
+  value = hcp_vault_cluster.example.*.vault_public_endpoint_url
 }
 
-output "id" {
-  value = hcp_boundary_cluster.example.id
+output "vault_cluster_private_url" {
+  value = hcp_vault_cluster.example.*.vault_private_endpoint_url
 }
 
-output "state" {
-  value = hcp_boundary_cluster.example.state
+output "vault_namespace" {
+  value = hcp_vault_cluster.example.*.namespace
 }
 
-output "tier" {
-  value = hcp_boundary_cluster.example.tier
+output "vault_admin_token" {
+  value = hcp_vault_cluster_admin_token.example.*.token
+  sensitive = true
 }
 
-output "hvn_id" {
-  value = hcp_hvn.example.id
-}
 
-output "hvn_cidr_block" {
-  value = hcp_hvn.example.cidr_block
-}
+# output "created_at" {
+#   value = hcp_boundary_cluster.example.created_at
+# }
 
-output "hvn_cloud_provider" {
-  value = hcp_hvn.example.cloud_provider
-}
+# output "id" {
+#   value = hcp_boundary_cluster.example.id
+# }
 
-output "hvn_organization_id" {
-  value = hcp_hvn.example.organization_id
-}
+# output "state" {
+#   value = hcp_boundary_cluster.example.state
+# }
 
-output "hvn_provider_account_id" {
-  value = hcp_hvn.example.provider_account_id
-}
+# output "tier" {
+#   value = hcp_boundary_cluster.example.tier
+# }
 
-output "hvn_region" {
-  value = hcp_hvn.example.region
-}
+# output "hvn_id" {
+#   value = hcp_hvn.example.id
+# }
 
-output "hvn_self_link" {
-  value = hcp_hvn.example.self_link
-}
+# output "hvn_cidr_block" {
+#   value = hcp_hvn.example.cidr_block
+# }
 
-output "hvn_state" {
-  value = hcp_hvn.example.state
-}
+# output "hvn_cloud_provider" {
+#   value = hcp_hvn.example.cloud_provider
+# }
+
+# output "hvn_organization_id" {
+#   value = hcp_hvn.example.organization_id
+# }
+
+# output "hvn_provider_account_id" {
+#   value = hcp_hvn.example.provider_account_id
+# }
+
+# output "hvn_region" {
+#   value = hcp_hvn.example.region
+# }
+
+# output "hvn_self_link" {
+#   value = hcp_hvn.example.self_link
+# }
+
+# output "hvn_state" {
+#   value = hcp_hvn.example.state
+# }
