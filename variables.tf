@@ -8,7 +8,7 @@ variable "client_secret" {
 
 variable "region" {
   description = "AWS Region to be used"
-  default     = "eu-west-1"
+  default     = "us-east-2"
 }
 
 variable "hvn_enabled" {
