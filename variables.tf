@@ -1,3 +1,7 @@
+variable "name_prefix" {
+ description = "Prefix to be used for all resources"
+ default = "boundary-demo"
+}
 variable "client_id" {
   description = "HCP credential: ClientID"
 }
